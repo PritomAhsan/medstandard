@@ -8,8 +8,14 @@ import { stats } from "@/lib/data";
 
 export const metadata: Metadata = { title: "About" };
 
+const founder = {
+  name: "Dr. Md. Atiquzzaman",
+  degrees: "MBBS, MPH",
+  role: "Founder & CEO | Lead Consultant",
+  specialty: "Healthcare Quality, Patient Safety & Compliance Specialist",
+};
+
 const team = [
-  { name: "Dr. [Founder Name]", role: "Founder & Lead Trainer", bio: "MBBS, MPH — Patient safety & quality specialist" },
   { name: "Dr. [Name]", role: "Head of Clinical Training", bio: "BLS / ACLS certified instructor" },
   { name: "[Name]", role: "Infection Control Lead", bio: "Certified Infection Control Nurse" },
   { name: "[Name]", role: "Quality & Accreditation Consultant", bio: "NABH / JCI assessor experience" },
@@ -64,11 +70,23 @@ export default function AboutPage() {
 
       <section className="bg-navy-50/60 py-16">
         <div className="section">
-          <SectionHeading eyebrow="Our team" title="Meet the Trainers" />
-          <div className="grid grid-cols-2 gap-3 sm:gap-6 lg:grid-cols-4">
+          <SectionHeading eyebrow="Our team" title="Meet Our Team" />
+          <div className="mx-auto mb-8 grid max-w-4xl overflow-hidden rounded-3xl bg-white shadow-xl ring-1 ring-navy-100 md:grid-cols-[300px_1fr]">
+            <Image src="/founder.jpg" alt={founder.name} width={640} height={640} className="aspect-square h-full w-full object-cover object-top" />
+            <div className="flex flex-col justify-center p-6 sm:p-10">
+              <span className="chip w-fit">Founder</span>
+              <h3 className="mt-4 text-2xl font-extrabold text-navy-900 sm:text-3xl">
+                {founder.name} <span className="text-lg font-semibold text-slate-500">{founder.degrees}</span>
+              </h3>
+              <p className="mt-2 font-semibold text-accent">{founder.role}</p>
+              <p className="mt-1 text-slate-600">{founder.specialty}</p>
+              <div className="mt-5 flex gap-1.5"><span className="h-1 w-10 rounded bg-accent" /><span className="h-1 w-4 rounded bg-brand-teal" /></div>
+            </div>
+          </div>
+          <div className="grid grid-cols-2 gap-3 sm:gap-6 lg:grid-cols-3">
             {team.map((m) => (
-              <div key={m.role} className="rounded-2xl bg-white p-4 text-center shadow-sm ring-1 ring-navy-100 sm:p-6">
-                <span className="mx-auto grid size-16 place-items-center sm:size-24 rounded-full bg-gradient-to-br from-navy-100 to-navy-50 text-navy-600"><UserRound size={44} /></span>
+              <div key={m.role} className="rounded-2xl bg-white p-4 text-center shadow-sm ring-1 ring-navy-100 last:col-span-2 sm:p-6 lg:last:col-span-1">
+                <span className="mx-auto grid size-16 place-items-center rounded-full sm:size-24 bg-gradient-to-br from-navy-100 to-navy-50 text-navy-600"><UserRound size={44} /></span>
                 <p className="mt-4 font-bold text-navy-900">{m.name}</p>
                 <p className="text-sm font-semibold text-accent">{m.role}</p>
                 <p className="mt-1 text-xs text-slate-500">{m.bio}</p>

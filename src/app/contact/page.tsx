@@ -14,8 +14,8 @@ export default async function ContactPage(props: PageProps<"/contact">) {
   const items = [
     { icon: Phone, label: "Phone", value: site.phone, href: site.phoneHref },
     { icon: Mail, label: "Email", value: site.email, href: `mailto:${site.email}` },
-    { icon: Globe, label: "Website", value: site.web },
-    { icon: MapPin, label: "Address", value: site.address },
+    { icon: Globe, label: "Website", value: site.web, href: site.webHref },
+    { icon: MapPin, label: "Address", value: site.address, href: site.mapUrl },
     { icon: Clock, label: "Office hours", value: site.hours },
   ];
 
@@ -29,16 +29,16 @@ export default async function ContactPage(props: PageProps<"/contact">) {
               <span className="grid size-12 shrink-0 place-items-center rounded-full bg-accent/10 text-accent"><I size={22} /></span>
               <div>
                 <p className="text-xs uppercase tracking-wide text-slate-500">{label}</p>
-                {href ? <a href={href} className="font-semibold text-navy-900 hover:text-accent">{value}</a> : <p className="font-semibold text-navy-900">{value}</p>}
+                {href ? <a href={href} {...(href.startsWith("http") ? { target: "_blank", rel: "noopener noreferrer" } : {})} className="font-semibold text-navy-900 hover:text-accent">{value}</a> : <p className="font-semibold text-navy-900">{value}</p>}
               </div>
             </div>
           ))}
-          <iframe
-            title="Map"
-            className="h-64 w-full rounded-xl border-0"
-            loading="lazy"
-            src="https://www.google.com/maps?q=Dhaka,Bangladesh&output=embed"
-          />
+          <div className="overflow-hidden rounded-xl ring-1 ring-navy-100">
+            <iframe title="MedStandard location map" className="h-64 w-full border-0" loading="lazy" src={site.mapEmbed} />
+            <a href={site.mapUrl} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 bg-navy-700 py-3 text-sm font-semibold text-white hover:bg-accent">
+              <MapPin size={16} /> Get Directions on Google Maps
+            </a>
+          </div>
         </div>
         <div id="consult" className="scroll-mt-28 rounded-2xl bg-white p-6 shadow-xl ring-1 ring-navy-100 sm:p-8">
           <h2 className="text-2xl font-bold text-navy-900">Book a Free Consultation</h2>

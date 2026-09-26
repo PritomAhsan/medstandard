@@ -3,9 +3,12 @@ export const site = {
   tagline: "Training • Compliance • Excellence",
   phone: "+880 1715 631436",
   phoneHref: "tel:+8801715631436",
-  email: "info@medstandard.com",
-  web: "www.medstandard.com",
-  address: "Dhaka, Bangladesh",
+  email: "info@medstandard-bd.com",
+  web: "www.medstandard-bd.com",
+  webHref: "https://www.medstandard-bd.com",
+  address: "House-1129, Road-11, Avenue-8, Mirpur DOHS, Dhaka-1216",
+  mapUrl: "https://maps.app.goo.gl/UN5nFoTrcQUDxzf8A",
+  mapEmbed: "https://www.google.com/maps?q=House-1129,+Sardar+Mansion,+Road-11,+Avenue-8,+Mirpur+DOHS,+Dhaka+1216&z=17&output=embed",
   hours: "9:00am – 6:00pm (Sat – Thu)",
 };
 
