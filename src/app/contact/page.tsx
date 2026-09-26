@@ -34,7 +34,7 @@ export default async function ContactPage(props: PageProps<"/contact">) {
             </div>
           ))}
           <div className="overflow-hidden rounded-xl ring-1 ring-navy-100">
-            <iframe title="MedStandard location map" className="h-64 w-full border-0" loading="lazy" src={site.mapEmbed} />
+            <iframe title="MedStandard location map" className="h-72 w-full border-0" loading="lazy" allowFullScreen referrerPolicy="strict-origin-when-cross-origin" src={site.mapEmbed} />
             <a href={site.mapUrl} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 bg-navy-700 py-3 text-sm font-semibold text-white hover:bg-accent">
               <MapPin size={16} /> Get Directions on Google Maps
             </a>

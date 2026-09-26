@@ -8,7 +8,8 @@ export const site = {
   webHref: "https://www.medstandard-bd.com",
   address: "House-1129, Road-11, Avenue-8, Mirpur DOHS, Dhaka-1216",
   mapUrl: "https://maps.app.goo.gl/UN5nFoTrcQUDxzf8A",
-  mapEmbed: "https://www.google.com/maps?q=House-1129,+Sardar+Mansion,+Road-11,+Avenue-8,+Mirpur+DOHS,+Dhaka+1216&z=17&output=embed",
+  mapEmbed:
+    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3649.434993831038!2d90.37374439999999!3d23.8386825!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c176d2a815e3%3A0xb349935d03ef9ac0!2sSARDAR%20MANSION%2C%20S.Kabir!5e0!3m2!1sen!2sbd!4v1790443108990!5m2!1sen!2sbd",
   hours: "9:00am – 6:00pm (Sat – Thu)",
 };
 
