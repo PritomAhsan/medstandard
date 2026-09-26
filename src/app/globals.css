@@ -1,26 +1,31 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@theme {
+  --color-navy-50: #eef3fb;
+  --color-navy-100: #d9e4f5;
+  --color-navy-600: #1e4a8a;
+  --color-navy-700: #173a6e;
+  --color-navy-800: #122d57;
+  --color-navy-900: #0c1f3d;
+  --color-brand-teal: #0f8b9b;
+  --color-accent: #f26b1d;
+  --color-accent-600: #d85a10;
+  --font-sans: var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
+  --font-script: var(--font-script-face), cursive;
+  --animate-marquee: marquee 45s linear infinite;
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
-}
+html { scroll-behavior: smooth; }
+body { background: #ffffff; color: #0f1b2d; }
+
+.section { @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8; }
+.btn-accent { @apply inline-flex items-center justify-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-accent/25 transition hover:bg-accent-600; }
+.btn-outline { @apply inline-flex items-center justify-center gap-2 rounded-full border-2 border-navy-700 px-6 py-3 text-sm font-semibold text-navy-700 transition hover:bg-navy-700 hover:text-white; }
+/* Swipeable row on phones, normal grid from sm up (grid columns set per use) */
+.mobile-scroll { @apply -mx-4 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-4 [scrollbar-width:none] sm:mx-0 sm:grid sm:overflow-visible sm:px-0 sm:pb-0; }
+.mobile-scroll > * { @apply w-[82%] shrink-0 snap-center sm:w-auto; }
+.chip { @apply inline-flex items-center gap-1.5 rounded-full bg-navy-50 px-3 py-1 text-xs font-semibold text-navy-700; }
